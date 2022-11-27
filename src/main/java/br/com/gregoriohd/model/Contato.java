@@ -1,10 +1,18 @@
 package br.com.gregoriohd.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Contato {
 	
 	private String nome;
+	
+	@Id
 	private String email;
+	
 	private String telefone;
+	
 	private Boolean whatsApp;
 
 	public String getNome() {

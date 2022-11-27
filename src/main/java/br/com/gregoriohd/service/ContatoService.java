@@ -17,23 +17,23 @@ public class ContatoService {
 	
 	
 	public List<Contato> listaContatos() {
-		return contatoRepository.listaContatos();		
+		return contatoRepository.findAll();		
 	}
 
 	public Optional<Contato> obterContato(String email) {
-		return contatoRepository.obterContato(email);
+		return contatoRepository.findById(email);
 	}
 
 	public Contato adicionar(Contato contato) {
-		return contatoRepository.adicionar(contato);		
+		return contatoRepository.save(contato);		
 	}
 	
 	public Contato atualizar(String emial, Contato contato) {
 		contato.setEmail(emial);
-		return contatoRepository.atualizar(contato);
+		return contatoRepository.save(contato);
 	}
 	
 	public void remover(String email) {
-		contatoRepository.remover(email);		
+		contatoRepository.deleteById(email);		
 	}
 }
